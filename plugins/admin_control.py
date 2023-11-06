@@ -100,7 +100,7 @@ async def re_enable_chat(bot, message):
     await message.reply("Cʜᴀᴛ Sᴜᴄᴄᴇꜱꜰᴜʟʟʏ Rᴇ-Eɴᴀʙʟᴇᴅ")
 
 
-@Client.on_message(filters.command('stats') & filters.incoming)
+@Client.on_message(filters.command('stats') &  filters.user(ADMINS) )
 async def get_ststs(bot, message):
     rju = await message.reply('<b>Pʟᴇᴀꜱᴇ Wᴀɪᴛ...</b>')
     total_users = await db.total_users_count()
